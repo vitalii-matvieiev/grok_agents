@@ -1,6 +1,8 @@
-const byId=id=>document.getElementById(id);let current='meeting',running=false;
+const byId=id=>document.getElementById(id);let current='tomorrow',running=false;
 
-byId('teamGrid').innerHTML=agents.map((a,i)=>`<article class="agent-card ${i===0?'featured':''}"><span class="number">0${i+1}</span><span class="avatar">${a.name[0]}</span><h3>${a.name}</h3><small>${a.role}</small><p>${a.desc}</p></article>`).join('');
+byId('teamGrid').innerHTML=agents.map((a,i)=>`<article class="agent-card ${i===0?'featured':''}"><span class="number">${String(i+1).padStart(2,'0')}</span><span class="avatar">${a.name[0]}</span><h3>${a.name}</h3><small>${a.role}</small><p>${a.desc}</p><div class="metric">↗ ${a.metric}</div><details><summary>${a.skills.length} скілів</summary><ul>${a.skills.map(s=>`<li>${s}</li>`).join('')}</ul></details></article>`).join('');
+
+byId('tomorrowGrid').innerHTML=tomorrowTasks.map(([name,task],i)=>`<article class="tomorrow-card"><span class="task-time">${i===0?'09:00':'до 09:00'}</span><div class="avatar mini">${name[0]}</div><h3>${name}</h3><p>${task}</p></article>`).join('');
 
 function renderScenario(){const s=scenarios[current];byId('sourceCard').innerHTML=s.source;byId('flow').innerHTML=s.flow.map(([name,job],i)=>`<div class="flow-step" data-step="${i}"><span class="avatar mini">${name[0]}</span><div><strong>${name}</strong><span>${job}</span></div><b class="state">○</b></div>`).join('');byId('flowStatus').textContent='очікує запуску';byId('result').classList.add('hidden');byId('resultEmpty').classList.remove('hidden');byId('runDemo').disabled=false;running=false}
 document.querySelectorAll('.scenario-tab').forEach(btn=>btn.addEventListener('click',()=>{if(running)return;document.querySelector('.scenario-tab.active').classList.remove('active');btn.classList.add('active');current=btn.dataset.scenario;renderScenario()}));
@@ -11,5 +13,5 @@ byId('runDemo').addEventListener('click',run);byId('resetDemo').addEventListener
 
 const categories=['Усі',...new Set(useCases.map(c=>c[1]))];let category='Усі';
 byId('filters').innerHTML=categories.map((c,i)=>`<button class="filter ${i===0?'active':''}" data-cat="${c}">${c}</button>`).join('');
-function renderCases(){const q=byId('caseSearch').value.trim().toLowerCase();const rows=useCases.filter(c=>(category==='Усі'||c[1]===category)&&(`${c[0]} ${c[2]}`).toLowerCase().includes(q));byId('caseCount').textContent=`Показано ${rows.length} із ${useCases.length}`;byId('caseGrid').innerHTML=rows.map(c=>`<article class="case-card ${c[3]?'recommended':''}"><div class="case-top"><span class="case-category">${c[1]}</span>${c[3]?'<span class="pick">ДЛЯ ВІТАЛІЯ</span>':''}</div><h3>${c[0]}</h3><p>${c[2]}</p></article>`).join('')}
+function renderCases(){const q=byId('caseSearch').value.trim().toLowerCase();const rows=useCases.filter(c=>(category==='Усі'||c[1]===category)&&(`${c[0]} ${c[2]} ${skillOwner[c[0]]}`).toLowerCase().includes(q));byId('caseCount').textContent=`Показано ${rows.length} із ${useCases.length}`;byId('caseGrid').innerHTML=rows.map(c=>`<article class="case-card ${c[3]?'recommended':''}"><div class="case-top"><span class="case-category">${c[1]}</span><span class="owner">${skillOwner[c[0]]}</span></div><h3>${c[0]}</h3><p>${c[2]}</p></article>`).join('')}
 byId('caseSearch').addEventListener('input',renderCases);byId('filters').addEventListener('click',e=>{const btn=e.target.closest('.filter');if(!btn)return;document.querySelector('.filter.active').classList.remove('active');btn.classList.add('active');category=btn.dataset.cat;renderCases()});renderCases();

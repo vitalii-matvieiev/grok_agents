@@ -1,0 +1,27 @@
+.s1{transform:translate(0,-155px)}
+.s2{transform:translate(95px,-122px)}
+.s3{transform:translate(155px,-42px)}
+.s4{transform:translate(145px,65px)}
+.s5{transform:translate(82px,142px)}
+.s6{transform:translate(0,168px)}
+.s7{transform:translate(-88px,140px)}
+.s8{transform:translate(-150px,68px)}
+.s9{transform:translate(-154px,-38px)}
+.s10{transform:translate(-98px,-120px)}
+.s11{transform:translate(0,-215px)}
+.tomorrow-section{padding:120px 0}
+.agent-card{min-height:295px}
+.agent-card p{margin:13px 0}
+.metric{font-size:10px;color:var(--mint);line-height:1.45;padding:9px 10px;background:#13251d;border-radius:8px}
+.agent-card details{margin-top:12px;color:var(--muted);font-size:10px}
+.agent-card summary{cursor:pointer;color:var(--lime);font-weight:700}
+.agent-card ul{padding-left:17px;line-height:1.6}
+.tomorrow-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.tomorrow-card{position:relative;padding:18px;border:1px solid var(--line);border-radius:14px;background:#0b1712;min-height:175px}
+.tomorrow-card .avatar{width:34px;height:34px;margin-bottom:14px}
+.tomorrow-card h3{font-size:15px;margin:0 0 8px}
+.tomorrow-card p{font-size:10px;color:var(--muted);line-height:1.55;margin:0}
+.task-time{position:absolute;top:17px;right:17px;font-size:9px;color:var(--lime);font-weight:800}
+.owner{font-size:9px;color:var(--lime);font-weight:800}
+@media(max-width:900px){.tomorrow-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.tomorrow-section{padding:80px 0}.tomorrow-grid{grid-template-columns:1fr}}

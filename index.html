@@ -9,12 +9,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="profit.css" />
 </head>
 <body>
   <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
   <header class="nav shell">
     <a class="brand" href="#top"><span class="brand-mark">С</span><span>Соломія / Штаб</span></a>
-    <nav><a href="#demo">Сценарії</a><a href="#team">Команда</a><a href="#cases">56 кейсів</a></nav>
+    <nav><a href="#demo">Сценарії</a><a href="#tomorrow">Завтра</a><a href="#team">Команда</a><a href="#cases">56 скілів</a></nav>
     <div class="live"><i></i> Система готова</div>
   </header>
 
@@ -22,30 +23,31 @@
     <section class="hero shell">
       <div class="hero-copy">
         <div class="eyebrow">MATVIEIEV AGENTOS · ПЕРСОНАЛЬНА КОМАНДА</div>
-        <h1>Вісім агенток.<br><em>Один результат.</em></h1>
-        <p>Операційний штаб Віталія перетворює розмови, дослідження й сигнали з бізнесу на структуровані рішення — українською, з джерелами та контрольними точками.</p>
+        <h1>Дванадцять агенток.<br><em>Усе — на прибуток.</em></h1>
+        <p>Операційний штаб Віталія покриває 56 скілів і перетворює сигнали з бізнесу на дохід, економію та наступні дії — українською, з доказами й контрольними точками.</p>
         <div class="hero-actions"><a class="button primary" href="#demo">Запустити сценарій <span>→</span></a><a class="button ghost" href="#cases">Переглянути 56 кейсів</a></div>
-        <div class="trust"><span>PREVIEW MODE</span><span>ЛЮДИНА ЗАТВЕРДЖУЄ</span><span>24/7 У ХМАРІ</span></div>
+        <div class="trust"><span>РОБОЧИЙ РЕЖИМ</span><span>ЛЮДИНА ЗАТВЕРДЖУЄ</span><span>24/7 У ХМАРІ</span></div>
       </div>
       <div class="orbital" aria-label="Схема команди">
         <div class="orbit orbit-1"></div><div class="orbit orbit-2"></div>
         <div class="core"><span class="avatar big">С</span><strong>Соломія</strong><small>керівниця штабу</small></div>
-        <div class="satellite s1">О</div><div class="satellite s2">Д</div><div class="satellite s3">З</div><div class="satellite s4">Р</div><div class="satellite s5">Л</div><div class="satellite s6">К</div><div class="satellite s7">Я</div>
+        <div class="satellite s1">О</div><div class="satellite s2">Д</div><div class="satellite s3">З</div><div class="satellite s4">Р</div><div class="satellite s5">М</div><div class="satellite s6">Л</div><div class="satellite s7">К</div><div class="satellite s8">Я</div><div class="satellite s9">Б</div><div class="satellite s10">К</div><div class="satellite s11">В</div>
       </div>
     </section>
 
     <section class="stats shell">
-      <div><strong>8</strong><span>спеціалізованих агенток</span></div>
-      <div><strong>2</strong><span>готові живі сценарії</span></div>
-      <div><strong>56</strong><span>перевірених юзкейсів</span></div>
+      <div><strong>12</strong><span>спеціалізованих агенток</span></div>
+      <div><strong>3</strong><span>робочі сценарії</span></div>
+      <div><strong>56</strong><span>закріплених скілів</span></div>
       <div><strong>0</strong><span>зовнішніх дій без «ок»</span></div>
     </section>
 
     <section class="demo-section shell" id="demo">
       <div class="section-heading"><div><div class="eyebrow">ЖИВИЙ СЦЕНАРІЙ</div><h2>Від хаосу до наступного кроку</h2></div><p>Перемикай сценарії та запускай потік. На сцені це займає близько 90 секунд.</p></div>
       <div class="scenario-tabs" role="tablist">
-        <button class="scenario-tab active" data-scenario="meeting">01 · Зустріч → задачі</button>
-        <button class="scenario-tab" data-scenario="research">02 · Дослідження → контент</button>
+        <button class="scenario-tab active" data-scenario="tomorrow">01 · Завтра → прибуток</button>
+        <button class="scenario-tab" data-scenario="meeting">02 · Зустріч → задачі</button>
+        <button class="scenario-tab" data-scenario="research">03 · Дослідження → контент</button>
       </div>
       <div class="demo-console">
         <div class="input-panel">
@@ -66,6 +68,11 @@
       </div>
     </section>
 
+    <section class="tomorrow-section shell" id="tomorrow">
+      <div class="section-heading"><div><div class="eyebrow">13 ВЕРЕСНЯ · НЕДІЛЯ</div><h2>Завдання кожній агентці</h2></div><p>Асинхронний ранковий цикл до 09:00. Жодних зовнішніх дій без підтвердження; Family’s time 20:00–21:00 захищено.</p></div>
+      <div class="tomorrow-grid" id="tomorrowGrid"></div>
+    </section>
+
     <section class="team-section shell" id="team">
       <div class="section-heading"><div><div class="eyebrow">КОМАНДА</div><h2>Кожна відповідає за свій контур</h2></div><p>Окремі ролі дають чистішу пам’ять, зрозумілішу відповідальність і передбачувані передачі роботи.</p></div>
       <div class="team-grid" id="teamGrid"></div>
@@ -73,11 +80,11 @@
 
     <section class="rhythm shell">
       <div><div class="eyebrow">ПЕРСОНАЛІЗОВАНИЙ РИТМ</div><h2>Працює навколо життя,<br>а не навпаки.</h2></div>
-      <div class="schedule"><div><time>08:00</time><span>Duolingo</span><i>захищений блок</i></div><div><time>09:00</time><span>Ранковий дайджест</span><i>Соломія</i></div><div><time>20:00</time><span>Family’s time</span><i>без робочих зустрічей</i></div></div>
+      <div class="schedule"><div><time>06:00</time><span>Duolingo</span><i>захищений блок</i></div><div><time>09:00</time><span>Прибутковий бриф</span><i>Соломія</i></div><div><time>20:00</time><span>Family’s time</span><i>без робочих зустрічей</i></div></div>
     </section>
 
     <section class="cases-section shell" id="cases">
-      <div class="section-heading"><div><div class="eyebrow">КАТАЛОГ МОЖЛИВОСТЕЙ</div><h2>56 юзкейсів AgentOS</h2></div><p>Повний каталог перевірених агентних ролей. Позначені кейси найкраще підходять Віталію.</p></div>
+      <div class="section-heading"><div><div class="eyebrow">КАТАЛОГ МОЖЛИВОСТЕЙ</div><h2>56 скілів AgentOS</h2></div><p>Кожен скіл має одну відповідальну агентку та конкретний економічний результат.</p></div>
       <div class="catalog-tools"><label class="search"><span>⌕</span><input id="caseSearch" placeholder="Пошук за роллю або результатом…" /></label><div class="filters" id="filters"></div></div>
       <div class="case-count" id="caseCount"></div>
       <div class="case-grid" id="caseGrid"></div>
