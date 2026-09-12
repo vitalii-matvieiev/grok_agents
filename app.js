@@ -2,7 +2,7 @@ const byId=id=>document.getElementById(id);
 const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 let current='tomorrow',running=false,stageLauncher=null;
 const map=byId('commandMap'),mapLines=byId('mapLines');
-const mapLayout=[['Олеся',16,72],['Дарина',28,83],['Зоряна',43,88],['Ярина',58,86],['Роксолана',73,78],['Марта',84,64],['Лада',82,43],['Калина',70,26],['Богдана',53,20],['Катерина',35,25],['Віра',20,42]];
+const mapLayout=[['Олеся',28,67],['Дарина',38,84],['Зоряна',51,90],['Ярина',63,88],['Роксолана',76,80],['Марта',88,65],['Лада',76,63],['Калина',84,24],['Богдана',70,14],['Катерина',25,18],['Віра',27,57]];
 
 byId('mapAgents').innerHTML=mapLayout.map(([name,left,top])=>{const a=agents.find(item=>item.name===name);return `<button class="agent-node" data-agent="${a.name}" style="--x:${left}%;--y:${top}%" type="button" aria-label="${a.name}: ${a.role}"><span>${a.name[0]}</span><small>${a.name}</small></button>`}).join('');
 byId('teamGrid').innerHTML=agents.map((a,i)=>`<article class="agent-card ${i===0?'featured':''}" data-agent-card="${a.name}" tabindex="0"><span class="number">${String(i+1).padStart(2,'0')}</span><span class="avatar">${a.name[0]}</span><h3>${a.name}</h3><small>${a.role}</small><p>${a.desc}</p><div class="metric">↗ ${a.metric}</div><details><summary>${a.skills.length} скілів</summary><ul>${a.skills.map(s=>`<li>${s}</li>`).join('')}</ul></details></article>`).join('');
