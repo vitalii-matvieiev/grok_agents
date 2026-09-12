@@ -29,11 +29,21 @@
         <div class="hero-actions"><a class="button primary" href="#demo">Запустити сценарій <span>→</span></a><a class="button ghost" href="#cases">Переглянути 56 кейсів</a><a class="button school-cta hero-school-cta" href="https://www.matvieiev.com/ai-orchestrator-school/?utm_source=agentos.matvieiev.com&amp;utm_medium=referral&amp;utm_campaign=ai_orchestrator_school&amp;utm_content=hero_cta">Створити свою AI-команду <span>↗</span></a></div>
         <div class="trust"><span>РОБОЧИЙ РЕЖИМ</span><span>ЛЮДИНА ЗАТВЕРДЖУЄ</span><span>24/7 У ХМАРІ</span></div>
       </div>
-      <div class="orbital" aria-label="Схема команди">
-        <div class="orbit orbit-1"></div><div class="orbit orbit-2"></div><span class="command-pulse" aria-hidden="true"></span>
-        <div class="core"><span class="avatar big">С</span><strong>Соломія</strong><small>керівниця штабу</small></div>
-        <div class="satellite s1">О</div><div class="satellite s2">Д</div><div class="satellite s3">З</div><div class="satellite s4">Р</div><div class="satellite s5">М</div><div class="satellite s6">Л</div><div class="satellite s7">К</div><div class="satellite s8">Я</div><div class="satellite s9">Б</div><div class="satellite s10">К</div><div class="satellite s11">В</div>
-      </div>
+      <section class="command-map" id="commandMap" aria-label="Карта командування AgentOS">
+        <div class="map-grid" aria-hidden="true"></div><svg class="map-lines" id="mapLines" aria-hidden="true"></svg>
+        <div class="map-hud"><span><i></i> ORCHESTRATION READY</span><b id="mapProgress">00 / 12</b></div>
+        <p class="map-hint">ОБЕРИ ВУЗОЛ · ЗАПУСТИ СЦЕНАРІЙ · ПЕРЕГЛЯНЬ МАРШРУТ</p>
+        <button class="stage-toggle" id="stageToggle" aria-haspopup="dialog">РЕЖИМ СЦЕНИ <span>↗</span></button>
+        <button class="map-node human-node" data-node="human" type="button"><small>GOVERNANCE 00</small><strong>ВІТАЛІЙ</strong><span>НАПРЯМ · КОНТРОЛЬ</span></button>
+        <button class="map-node input-node node-goal" data-node="goal" type="button"><small>ВХІД 01</small><strong>ЦІЛЬ</strong><span>ОЧІКУВАНИЙ РЕЗУЛЬТАТ</span></button>
+        <button class="map-node input-node node-context" data-node="context" type="button"><small>ВХІД 02</small><strong>КОНТЕКСТ</strong><span>ДАНІ · ПАМʼЯТЬ</span></button>
+        <button class="map-node input-node node-constraints" data-node="constraints" type="button"><small>ВХІД 03</small><strong>ОБМЕЖЕННЯ</strong><span>ПРАВИЛА · ЛІМІТИ</span></button>
+        <button class="map-node solomiia-node" data-node="solomiia" type="button"><small>КЕРІВНИЦЯ ШТАБУ</small><strong>СОЛОМІЯ</strong><span>РОЗПОДІЛ · СИНТЕЗ</span></button>
+        <div class="map-agents" id="mapAgents" aria-label="12 агенток"></div>
+        <button class="map-node approval-node" data-node="approval" type="button"><small>FEEDBACK LOOP</small><strong>ВІТАЛІЙ<br>ЗАТВЕРДЖУЄ</strong><span>ОГЛЯД · РІШЕННЯ</span></button>
+        <aside class="map-detail" id="mapDetail" aria-live="polite"><span class="detail-kicker">AGENTOS · ГОТОВО</span><strong>Віталій задає напрям.</strong><p>Соломія збирає потрібних агенток і повертає пакет рішень на твоє затвердження.</p></aside>
+        <button class="stage-close" id="stageClose" type="button" aria-label="Закрити режим сцени">×</button>
+      </section>
     </section>
 
     <section class="stats shell">
@@ -44,7 +54,7 @@
     </section>
 
     <section class="demo-section shell" id="demo">
-      <div class="section-heading"><div><div class="eyebrow">ЖИВИЙ СЦЕНАРІЙ</div><h2>Від хаосу до наступного кроку</h2></div><p>Перемикай сценарії та запускай потік. На сцені це займає близько 90 секунд.</p></div>
+      <div class="section-heading"><div><div class="eyebrow">ЖИВИЙ СЦЕНАРІЙ</div><h2>Запусти маршрут.<br>Подивись, як працює штаб.</h2></div><p>Кожен сценарій запускає інший живий маршрут у карті командування. Зовнішніх дій система не виконує.</p></div>
       <div class="scenario-tabs" role="tablist">
         <button class="scenario-tab active" data-scenario="tomorrow">01 · Завтра → прибуток</button>
         <button class="scenario-tab" data-scenario="meeting">02 · Зустріч → задачі</button>
@@ -75,7 +85,7 @@
     </section>
 
     <section class="team-section shell" id="team">
-      <div class="section-heading"><div><div class="eyebrow">КОМАНДА</div><h2>Кожна відповідає за свій контур</h2></div><p>Окремі ролі дають чистішу пам’ять, зрозумілішу відповідальність і передбачувані передачі роботи.</p></div>
+      <div class="section-heading"><div><div class="eyebrow">МЕРЕЖА АГЕНТОК</div><h2>12 напрямів.<br>Один центр рішень.</h2></div><p>Обери агентку на карті або тут — кожна має власний контур, KPI та набір скілів.</p></div>
       <div class="team-grid" id="teamGrid"></div>
     </section>
 
@@ -85,7 +95,7 @@
     </section>
 
     <section class="cases-section shell" id="cases">
-      <div class="section-heading"><div><div class="eyebrow">КАТАЛОГ МОЖЛИВОСТЕЙ</div><h2>56 скілів AgentOS</h2></div><p>Кожен скіл має одну відповідальну агентку та конкретний економічний результат.</p></div>
+      <div class="section-heading"><div><div class="eyebrow">МАТРИЦЯ МОЖЛИВОСТЕЙ</div><h2>56 скілів AgentOS</h2></div><p>Кожен скіл привʼязаний до відповідальної агентки та конкретного економічного результату.</p></div>
       <div class="catalog-tools"><label class="search"><span>⌕</span><input id="caseSearch" placeholder="Пошук за роллю або результатом…" /></label><div class="filters" id="filters"></div></div>
       <div class="case-count" id="caseCount"></div>
       <div class="case-grid" id="caseGrid"></div>
