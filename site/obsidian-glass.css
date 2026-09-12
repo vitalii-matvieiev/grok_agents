@@ -89,6 +89,48 @@ body {
   color: var(--text);
 }
 
+.school-cta { white-space: nowrap; }
+.hero-school-cta {
+  border: 1px solid rgba(113, 238, 232, .46);
+  color: var(--mint);
+  background: rgba(25, 211, 207, .07);
+}
+.hero-school-cta:hover {
+  color: #041112;
+  background: var(--mint);
+  border-color: var(--mint);
+  box-shadow: 0 10px 34px rgba(25, 211, 207, .25);
+  transform: translateY(-1px);
+}
+
+.school-cta-section {
+  display: grid;
+  grid-template-columns: 1fr minmax(320px, .84fr);
+  gap: 72px;
+  align-items: center;
+  padding: 62px;
+  margin: 0 auto 120px;
+  border: 1px solid rgba(113, 238, 232, .32);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 92% 12%, rgba(113, 238, 232, .16), transparent 20rem),
+    linear-gradient(125deg, rgba(25, 211, 207, .13), rgba(255, 255, 255, .035));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .07), 0 24px 60px rgba(0, 0, 0, .18);
+}
+.school-cta-section h2 {
+  margin: 0;
+  font-family: Unbounded, sans-serif;
+  font-size: clamp(28px, 3.4vw, 44px);
+  line-height: 1.12;
+  letter-spacing: -.045em;
+}
+.school-cta-copy p {
+  margin: 0 0 25px;
+  color: #c3d0d1;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
 .orbit { border-color: rgba(113, 238, 232, .28); }
 .core {
   background: linear-gradient(145deg, rgba(24, 56, 58, .94), rgba(10, 16, 18, .96));
@@ -250,6 +292,12 @@ body {
   .agent-card,
   .tomorrow-card,
   .case-card { transition: border-color .2s ease, opacity .2s ease; }
+  .school-cta-section {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 46px;
+    margin-bottom: 80px;
+  }
 }
 
 @media (prefers-reduced-motion:reduce) {
@@ -262,4 +310,15 @@ body {
   .command-pulse,
   .orbital::after { display: none; }
   .reveal { opacity: 1; transform: none; }
+}
+
+@media (max-width:600px) {
+  .hero-actions { align-items: stretch; }
+  .hero-actions .button { justify-content: space-between; }
+  .school-cta-section {
+    padding: 32px 22px;
+    border-radius: 18px;
+    margin-bottom: 64px;
+  }
+  .school-cta-copy .button { width: 100%; justify-content: space-between; }
 }
